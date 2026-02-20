@@ -1,9 +1,24 @@
+# create feature branch
+# switch to feature branch and modify the yaml file add pull_request
 name: Hello World
-on: push
+on: 
+  push:
+    branches:
+      - main
+      - develop
+      - 'release/**'
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Build Step
         run: echo "A demo build"
+
+
+
 
